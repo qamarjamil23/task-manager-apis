@@ -18,7 +18,11 @@ class TaskFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => User::factory(),
+            'title' => fake()->sentence(4),
+            'description' => fake()->paragraph(),
+            'status' => 'pending',
+            'due_date' => fake()->dateTimeBetween('now', '+1 month')->format('Y-m-d'),
         ];
     }
 }
