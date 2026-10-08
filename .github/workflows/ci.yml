@@ -32,3 +32,6 @@ jobs:
 
       - name: Run tests
         run: php artisan test
+
+      - name: Build Docker image
+        run: docker build -t task-manager-api .
